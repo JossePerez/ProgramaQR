@@ -1,0 +1,24 @@
+{
+  "alumno": [
+    {
+      "nombre": "Juan Pérez",
+      "matricula": "A12345",
+      "direccion": "Calle A, Ciudad X"
+    },
+    {
+      "nombre": "María Rodríguez",
+      "matricula": "A67890",
+      "direccion": "Avenida B, Ciudad Y"
+    },
+    {
+      "nombre": "Carlos Gómez",
+      "matricula": "A54321",
+      "direccion": "Calle C, Ciudad Z"
+    },
+    {
+      "nombre": "Ana López",
+      "matricula": "A98765",
+      "direccion": "Avenida D, Ciudad W"
+    }
+  ]
+}
