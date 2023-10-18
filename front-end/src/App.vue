@@ -1,10 +1,12 @@
 <script setup>
 //import HelloWorld from './components/HelloWorld.vue'
 import InterfazAlumno from './components/InterfazAlumno.vue';
+import InterfazDocente from './components/InterfazDocente.vue';
 </script>
 
 <template>
-  <InterfazAlumno></InterfazAlumno>
+ <InterfazAlumno></InterfazAlumno>  
+ <!-- <InterfazDocente></InterfazDocente> -->
 </template>
 
 <style scoped>

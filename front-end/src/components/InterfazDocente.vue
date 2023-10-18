@@ -1,11 +1,5 @@
 <script setup>
-import { ref } from 'vue'
 
-defineProps({
-  msg: String,
-})
-
-const count = ref(0)
 </script>
 
 <template>
@@ -15,7 +9,7 @@ const count = ref(0)
     <div class="section-div">
         <div class="div-info">
             <div>
-                <h2>Andres Ray</h2>
+                <h2>Maria Miranda</h2>
             </div>
             <div class="info-datos">
                 <div>
@@ -23,22 +17,30 @@ const count = ref(0)
                     <p>2354334</p>
                 </div>
                 <div>
-                    <h6>Carrera:</h6>
-                    <p>Derecho</p>
+                    <h6>Cargo:</h6>
+                    <p>Docente</p>
                 </div>
                 <div>
                     <h6>Fecha de ingreso:</h6>
                     <p>26/08/2022</p>
                 </div>
                 <div class="div-status">
-                    <img src="../imagenes/checkin.png" class="img-fluid" alt="">
+                    <div>
+                        <div>
+                            <h6>Clase:</h6>
+                            <p>Calculo Diferencial</p>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="../imagenes/checkin.png" class="img-fluid" alt="">
+                    </div>
                 </div>
             </div>
         </div>
 
         <div class="div-foto">
             <div class="div-foto">
-                <img src="../imagenes/Alumno.jpg"  class="img-fluid" alt="">
+                <img src="../imagenes/Docente.png"  class="img-fluid" alt="">
             </div>
         </div>
     </div>
@@ -56,7 +58,7 @@ const count = ref(0)
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Sombra de fondo */
 }
 .section-div h6, p{
-    padding-left: 1rem;
+    padding-left: 2rem;
 }
 
 .div-info {
@@ -85,7 +87,7 @@ h6 {
 .div-status img{
     background-color: rgb(190, 188, 188);
     border-radius: 5px;
-    margin-left: 4rem;
+    margin-left: 6rem;
 }
 .div-foto{
     height: auto;
