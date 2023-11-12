@@ -5,8 +5,8 @@ import InterfazDocente from './components/InterfazDocente.vue';
 </script>
 
 <template>
- <InterfazAlumno></InterfazAlumno>  
- <!-- <InterfazDocente></InterfazDocente> -->
+ <InterfazAlumno></InterfazAlumno> 
+ <!-- <InterfazDocente></InterfazDocente> --> 
 </template>
 
 <style scoped>
