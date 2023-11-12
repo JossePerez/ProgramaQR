@@ -2,10 +2,12 @@
 //import HelloWorld from './components/HelloWorld.vue'
 import InterfazAlumno from './components/InterfazAlumno.vue';
 import InterfazDocente from './components/InterfazDocente.vue';
+import Fianzas from './components/Finanzas.vue'
 </script>
 
 <template>
- <InterfazAlumno></InterfazAlumno> 
+<Fianzas></Fianzas>
+ <!-- <InterfazAlumno></InterfazAlumno> -->
  <!-- <InterfazDocente></InterfazDocente> --> 
 </template>
 
