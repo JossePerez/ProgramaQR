@@ -1,53 +1,63 @@
 <template>
   <section>
-    <div class="section-div">
+    <div v-if="alumno" class="section-div">
       <div class="div-info">
         <div>
-          <h2>{{ alumnoInfo.nombre }}</h2>
+          <h2>{{ alumno && alumno.Nombre }}</h2>
         </div>
         <div class="info-datos">
           <div>
             <h6>Numero de control:</h6>
-            <p>{{ alumnoInfo.numeroDeControl }}</p>
+            <p>{{ alumno && alumno.NumeroControl }}</p>
           </div>
           <div>
             <h6>Fecha de ingreso:</h6>
-            <p>{{ alumnoInfo.fechaDeIngreso }}</p>
+            <p>{{ alumno && alumno.FechaIngreso }}</p>
           </div>
         </div>
       </div>
 
       <div class="div-foto">
         <div class="div-foto">
-          <img :src="alumnoInfo.foto" class="img-fluid" alt="">
+          <img :src="alumno && alumno.Foto" class="img-fluid" alt="">
         </div>
       </div>
+    </div>
+    <div v-else>
+      <p>Cargando...</p>
     </div>
   </section>
 </template>
 
-<script setup>
-import { ref } from 'vue';
+<script>
 import axios from 'axios';
+export default {
+  data(){
+    return {
+      alumno:null,
+    };
+  },
+  mounted() {
+    try {
+      // Obtener el ID del alumno de la URL
+      const alumnoId = this.$route.params.id; // Asumiendo que estás usando Vue Router
 
-const alumnoInfo = ref({
-  nombre: '',
-  numeroDeControl: '',
-  fechaDeIngreso: '',
-  foto: ''
-});
-
-async function obtenerInfoAlumno() {
-  try {
-    const response = await axios.post('http://localhost:3000/qr');
-    alumnoInfo.value = response.data;
-  } catch (error) {
-    console.error(error);
-  }
-}
-
-obtenerInfoAlumno();
+      // Hacer la solicitud utilizando Axios
+      axios.get(`http://localhost:3000/api/alumnos/${alumnoId}`)
+        .then(response => {
+          // Asignar el primer elemento del array rowAlumno a la variable alumno
+          this.alumno = response.data.rowAlumno[0];
+        })
+        .catch(error => {
+          console.error('Error al obtener los datos del alumno', error);
+        });
+    } catch (error) {
+      console.error('Error en el gancho mounted:', error);
+    }
+  },
+};
 </script>
+
 
 <style scoped>
 .section-div {
@@ -101,3 +111,4 @@ p {
   text-align: left;
 }
 </style>
+

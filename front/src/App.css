@@ -1,0 +1,52 @@
+.section-div {
+  display: flex;
+  background-color: rgba(194, 129, 49, 0.441);
+  align-items: center;
+  border-radius: 15px;
+  margin-left: 2rem;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+.section-div h6,
+p {
+  padding-left: 1rem;
+}
+
+.div-info {
+  margin-left: 1rem;
+  width: 30%;
+}
+
+.info-datos {
+  margin: auto;
+  text-align: center;
+}
+
+h2 {
+  margin: 2rem 0;
+}
+
+h6 {
+  display: flex;
+}
+
+.div-status {
+  margin: 3rem 0;
+  width: 3rem;
+}
+
+.div-status img {
+  background-color: rgb(190, 188, 188);
+  border-radius: 5px;
+  margin-left: 4rem;
+}
+
+.div-foto {
+  height: auto;
+}
+
+p {
+  text-align: left;
+}
+
+

@@ -6,8 +6,9 @@ import Fianzas from './components/Finanzas.vue'
 </script>
 
 <template>
-<Fianzas></Fianzas>
- <!-- <InterfazAlumno></InterfazAlumno> -->
+<!-- <Fianzas></Fianzas> -->
+<router-view><InterfazAlumno></InterfazAlumno></router-view>
+
  <!-- <InterfazDocente></InterfazDocente> --> 
 </template>
 

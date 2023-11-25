@@ -1,27 +1,27 @@
 import express from "express";
 import cors from "cors";
 import bodyParser from 'body-parser';
+import mysql from 'mysql2/promise';
+import alumnosRoutes from './routes/alumnos.routes.js'
 
 const app = express();
 
+//Se crean las cookies para que se mantenga la sesión
+/*app.use(cookieSession({name:"session",
+keys:["key1","key2"],
+maxAge:24*60*60*1000}))
+*/
+
 app.use(
   cors({
-    origin: "http://localhost:5000",
+    origin: "http://127.0.0.1:5173",
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
     credentials: true,
   })
 );
-app.use(cors());
-app.use(bodyParser.json());
+app.use(express.json());
+app.use("/api",alumnosRoutes)
 
-app.post('/qr', (req, res) => {
-  const alumnoInfo = {
-    nombre: 'Nombre del Alumno',
-    numeroDeControl: '12345',
-    fechaDeIngreso: '2023-11-01',
-    foto: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNDfEm2RI-XLQed8IUqNuzlJa3srstfCAzVQJyIJIlgiISUfiiJ9-2IQGkVV2cJ-E72hI&usqp=CAU'
-  };
-  res.json(alumnoInfo);
-});
+
 
 export default app;
