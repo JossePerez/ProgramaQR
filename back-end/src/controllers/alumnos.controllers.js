@@ -5,12 +5,12 @@ export const getAlumno = async (req, res) => {
     "SELECT * FROM `alumnos` WHERE NumeroControl=?",
     [req.params.id]
   );
-  console.log("Estos son los datos del alumno: ",rowAlumno);
-  if (rowAlumno.length===0){
-    return res.status(404).send({message:"No existe este alumno"});
+  console.log("Estos son los datos del alumno: ", rowAlumno);
+  if (rowAlumno.length === 0) {
+    console.log("No existe este alumno");
+
+    return res.status(404).send({ message: "No existe este alumno" });
   }
-
-  res.send({rowAlumno});
+  // Lógica adicional si hay alumnos
+  res.status(200).send({ message: "Alumno encontrado", alumno: rowAlumno[0] });
 };
-
-
